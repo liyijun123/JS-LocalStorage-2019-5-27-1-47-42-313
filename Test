@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <button onclick="add()">+</button>
+    <div id="myDiv"></div>
+
+</body>
+
+<script type="text/javascript">
+    if (window.name == "") {
+        var a = 0;
+        localStorage.setItem("number", a);
+        document.getElementById("myDiv").innerText = localStorage.getItem("number");
+        window.name = " ";
+    } else {
+        localStorage.setItem("number", localStorage.getItem("number"));
+        document.getElementById("myDiv").innerText = localStorage.getItem("number");
+    }
+    function add() {
+        a = localStorage.getItem("number");
+        a++;
+        localStorage.setItem("number", a);
+        document.getElementById("myDiv").innerText = localStorage.getItem("number");
+    }
+</script>
+</html>
